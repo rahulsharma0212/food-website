@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <title>Mapmyindia Maps</title> -->
+    <title>MapmyIndia Maps</title>
+    <meta name="description" content="Mapmyindia Maps." />
+    <meta name="keywords" content="Mapmyindia Maps, Mapmyindia, Maps" />
+    <link rel="icon" href="https://www.mapmyindia.com/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://apis.mapmyindia.com/advancedmaps/api/f08ed07e54880469802f64eb355b2a46/map_sdk?layer=vector&v=2.0&callback=initMap1"></script>
+    <style>
+        #map {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid #cccccc;
+            z-index: 0;
+        }
+        
+        .mapboxgl-popup-content {
+            background-color: #fafafa !important;
+            width: 155;
+            height: 60;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap1() {
+            map = new MapmyIndia.Map('map', {
+                center: [28.5507160000001, 77.2689280000001],
+                zoom: 16,
+                zoomControl: true,
+                clickableIcons: false
+            });
+            var Marker = new MapmyIndia.Marker({
+                map: map,
+                position: [28.5507160000001, 77.2689280000001],
+                /*if fitbound true*/
+                icon: "https://maps.mapmyindia.com/images/to.png",
+                offset: [0, 10],
+                width: 30,
+                height: 40,
+                fitbounds: false,
+                popupOptions: {
+                    openPopup: true,
+                    autoClose: false,
+                    offset: [0, -5],
+                    maxWidth: 220
+                },
+                popupHtml: "<div style='padding:5px; font-size:10px; font-family: Open Sans, sans-serif; color:#212121;'><b>MapmyIndia Head Office <br> 237, Okhla Industrial Estate, Phase 3 New Delhi–110020</b></div>",
+                draggable: false
+            });
+        }
+    </script>
+</body>
+
+</html>
