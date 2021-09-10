@@ -739,7 +739,7 @@ section.contact-us .contact-info-wrapper {
 
 section.contact-us .map {
     flex: 1;
-    filter: grayscale(80%);
+    /* filter: grayscale(80%); */
 }
 
 section.contact-us .contact-info {
